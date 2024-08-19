@@ -55,6 +55,9 @@ function startGame() {
         alert('Please enter both player names.');
         return;
     }
+    document.getElementById('player1-name').textContent = player1Name;
+    document.getElementById('player2-name').textContent = player2Name;
+
     
     document.getElementById('player-details').style.display = 'none';
     document.getElementById('category').style.display = 'block';

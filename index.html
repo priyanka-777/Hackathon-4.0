@@ -1,45 +1,55 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Two-Player Trivia Game using JavaScript</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div id="player-details">
-            <h2>Players Details</h2>
-            <h3>Enter Player 1 Name:</h3>
-            <input type="text" id="name1" required>
-            <br>
-            <h3>Enter Player 2 Name:</h3>
-            <input type="text" id="name2" required>
-            <br>
-            <button id="start">Start Game</button>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-Player Trivia Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="player-details" class="card">
+            <h2>Player Details</h2>
+            <div class="input-group">
+                <label for="name1">Enter Player 1 Name:</label>
+                <input type="text" id="name1" placeholder="Player 1" required>
+            </div>
+            <div class="input-group">
+                <label for="name2">Enter Player 2 Name:</label>
+                <input type="text" id="name2" placeholder="Player 2" required>
+            </div>
+            <button id="start" class="btn">Start Game</button>
         </div>
-        <div id="category" style="display: none;">
+        
+        <div id="category" class="card" style="display: none;">
             <h2>Choose a Category</h2>
-            <select id="select-category"></select>
-            <br>
-            <button id="select-category-btn">Select Category</button>
+            <select id="select-category" class="dropdown"></select>
+            <button id="select-category-btn" class="btn">Select Category</button>
         </div>
-        <div id="questions" style="display: none;">
-            <h2>Question</h2>
-            <h3 id="current-player">Player 1's Turn</h3>
+        
+        <div id="questions" class="card" style="display: none;">
+            <h2 id="current-player">Question</h2>
             <p id="question-text"></p>
             <h3>Answers</h3>
-            <ul id="answers"></ul>
-            <button id="submit-answer">Submit Answer</button>
+            <ul id="answers" class="answer-list"></ul>
+            <button id="submit-answer" class="btn">Next</button>
         </div>
-        <div id="score" style="display: none;">
+        
+        <div id="score" class="card" style="display: none;">
             <h2>Score Board</h2>
-            <p>Player 1: <span id="player1-score">0</span></p>
-            <p>Player 2: <span id="player2-score">0</span></p>
+            <div class="score-group">
+                <p><span id="player1-name"></span>: <span id="player1-score">0</span></p>
+                <p><span id="player2-name"></span>: <span id="player2-score">0</span></p>
+            </div>
         </div>
-        <div id="end" style="display: none;">
+        
+        <div id="end" class="card" style="display: none;">
             <h2>Game Over</h2>
             <p id="message"></p>
-            <button id="play-again">Play Again</button>
-            <button id="end-game">End Game</button>
+            <button id="play-again" class="btn">Play Again</button>
+            <button id="end-game" class="btn">End Game</button>
         </div>
-        <script src="script.js"></script>
-    </body>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>
